@@ -135,7 +135,7 @@ class SearchSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 15),
+                margin: EdgeInsets.all(10),
                 child: Column(
                   children: [
                     Text(
@@ -156,6 +156,7 @@ class SearchSection extends StatelessWidget {
                 ),
               ),
               Container(
+                padding: EdgeInsets.all(8),
                 child: Column(
                   children: [
                     Text(
