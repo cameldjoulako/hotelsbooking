@@ -108,7 +108,7 @@ class SearchSection extends StatelessWidget {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: 'Londre',
+                      hintText: 'London',
                       contentPadding: EdgeInsets.all(15),
                       border: InputBorder.none,
                     ),
