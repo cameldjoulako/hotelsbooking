@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBarSection(),
     );
   }
 }
@@ -415,7 +415,7 @@ class HotelSection extends StatelessWidget {
   }
 }
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBarSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
