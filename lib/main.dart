@@ -55,8 +55,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         'Explore',
         style: GoogleFonts.nunito(
           color: Colors.black,
-          fontSize: 25,
-          fontWeight: FontWeight.w700,
+          fontSize: 24,
+          fontWeight: FontWeight.w600,
         ),
       ),
       actions: [
@@ -261,7 +261,7 @@ class HotelSection extends StatelessWidget {
             children: hotelList.map((hotel) {
               return Container(
                 margin: EdgeInsets.all(10.0),
-                height: 270,
+                height: 240,
                 width: 400,
                 //color: Colors.green,
                 decoration: BoxDecoration(
@@ -287,7 +287,7 @@ class HotelSection extends StatelessWidget {
                           bottomRight: Radius.zero,
                           bottomLeft: Radius.zero),
                       child: Image(
-                        height: 160,
+                        height: 140,
                         width: 400,
                         fit: BoxFit.cover,
                         image: AssetImage(
