@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -86,7 +85,7 @@ class SearchSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 15, left: 10, bottom: 15, right: 10),
+      padding: EdgeInsets.only(top: 20, left: 10, right: 10),
       decoration: BoxDecoration(
         color: Colors.grey[200],
       ),
@@ -137,6 +136,7 @@ class SearchSection extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Choose date',
@@ -158,6 +158,7 @@ class SearchSection extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(8),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Number of Rooms',
@@ -222,40 +223,43 @@ class HotelSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(10.0),
       color: Colors.white,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '550 hotels founds',
-                style: GoogleFonts.nunito(
-                  color: Colors.black,
-                  fontSize: 15,
+          Container(
+            margin: EdgeInsets.fromLTRB(12, 0, 12, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '550 hotels founds',
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Filters',
-                    style: GoogleFonts.nunito(
-                      color: Colors.black,
-                      fontSize: 15,
+                Row(
+                  children: [
+                    Text(
+                      'Filters',
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
                     ),
-                  ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.filter_list_outlined,
-                      color: d_green,
-                      size: 25,
+                    IconButton(
+                      icon: Icon(
+                        Icons.filter_list_outlined,
+                        color: d_green,
+                        size: 25,
+                      ),
+                      onPressed: null,
                     ),
-                    onPressed: null,
-                  ),
-                ],
-              )
-            ],
+                  ],
+                )
+              ],
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -272,28 +276,50 @@ class HotelSection extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Colors.grey[350],
+                      //color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 4,
                       blurRadius: 6,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: Offset(0, 3),
                     ),
                   ],
                 ),
                 child: Column(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(18),
-                          topRight: Radius.circular(18),
-                          bottomRight: Radius.zero,
-                          bottomLeft: Radius.zero),
-                      child: Image(
-                        height: 140,
-                        width: 400,
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          hotel['picture'],
+                    Container(
+                      height: 140,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(18),
+                            topRight: Radius.circular(18)),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            hotel['picture'],
+                          ),
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 295,
+                            bottom: 85,
+                            child: MaterialButton(
+                              color: Colors.white,
+                              shape: CircleBorder(),
+                              onPressed: () {},
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Icon(
+                                  Icons.favorite_outline_rounded,
+                                  color: d_green,
+                                  size: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -319,7 +345,7 @@ class HotelSection extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                      margin: EdgeInsets.fromLTRB(10, 3, 10, 5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -360,34 +386,34 @@ class HotelSection extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                      margin: EdgeInsets.fromLTRB(10, 4, 10, 4),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
                               Icon(
-                                Icons.rate_review_rounded,
+                                Icons.star_rate,
                                 color: d_green,
                                 size: 14.0,
                               ),
                               Icon(
-                                Icons.rate_review_rounded,
+                                Icons.star_rate,
                                 color: d_green,
                                 size: 14.0,
                               ),
                               Icon(
-                                Icons.rate_review_rounded,
+                                Icons.star_rate,
                                 color: d_green,
                                 size: 14.0,
                               ),
                               Icon(
-                                Icons.rate_review_rounded,
+                                Icons.star_rate,
                                 color: d_green,
                                 size: 14.0,
                               ),
                               Icon(
-                                Icons.rate_review_rounded,
+                                Icons.star_border,
                                 color: d_green,
                                 size: 14.0,
                               ),
@@ -420,9 +446,7 @@ class BottomNavBarSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
+      selectedItemColor: Colors.grey[600],
       items: [
         BottomNavigationBarItem(
           icon: Icon(
@@ -440,7 +464,7 @@ class BottomNavBarSection extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.search_off,
+            Icons.person,
             color: d_green,
           ),
           label: 'Profile',
