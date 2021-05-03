@@ -96,7 +96,7 @@ class SearchSection extends StatelessWidget {
             children: [
               Container(
                 child: Container(
-                  width: 300,
+                  width: 295,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
